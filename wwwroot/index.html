@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Book CRUD</title>
+    <link rel="stylesheet" href="css/run.css" />
+</head>
+<body>
+    <h1>Book CRUD</h1>
+    <h3>Add</h3>
+    <!--<form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-name" placeholder="New to-do">
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="editForm">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateItem()">
+            <input type="hidden" id="edit-id">
+            <input type="checkbox" id="edit-inStock">
+            <input type="text" id="edit-name">
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>-->
+    <input type="hidden" id="curr_accshuttledistance" />
+    <input type="hidden" id="curr_speedlevel" />
+    <input type="hidden" id="curr_shuttlenumber" />
+    <input type="hidden" id="curr_speed" />
+    <input type="hidden" id="curr_leveltime" />
+    <input type="hidden" id="curr_commulativetime" />
+    <input type="hidden" id="curr_starttime" />
+
+    <input type="hidden" id="next_accshuttledistance" />
+    <input type="hidden" id="next_speedlevel" />
+    <input type="hidden" id="next_shuttlenumber" />
+    <input type="hidden" id="next_speed" />
+    <input type="hidden" id="next_leveltime" />
+    <input type="hidden" id="next_commulativetime" />
+    <input type="hidden" id="next_starttime" />
+
+    <input type="hidden" id="loadsecond" />
+
+
+    <div>
+        <div><input type="button" id="btnstartrun" onclick="startrun()" value="Start" /></div>
+        <div id="curr_track" style="margin-top:5px; padding:10px;border-radius:10px;background-color:#e0e0e0">
+            <div><span>Level</span> <span id="level"></span></div>
+            <div><span>Shuttle</span> <span id="shuttle"></span></div>
+            <div><span id="kmperhr"></span></div>
+        </div>
+        <br />
+        <div id="myProgress" style="height:10px">
+            <div id="myBar" style="height:10px"></div>
+        </div>
+        <div style="margin-top: 10px;">
+            <div style=" width:25%; margin-right:15px; float: left;padding: 10px;border-radius: 3px;background-color: #e0e0e0"><div>Next Shuttle</div><div><span id="nextShuttle">0:00 s</span></div></div>
+            <div style="width: 25%; margin-right: 15px; float: left; padding: 10px; border-radius: 3px; background-color: #e0e0e0 "><div>Total Time</div><div><span id="totalTime">0:00 m</span></div></div>
+            <div style=" width: 25%; margin-right: 15px; float: left; padding: 10px; border-radius: 3px; background-color: #e0e0e0 "><div>Total Distance</div><div><span id="totalDistance">0 m</span></div></div>
+        </div>
+    </div>
+
+    <div style="clear: both;"></div>
+    <!--<p id="counter"></p>-->
+    <div><p><b>Track</b></p></div>
+    <hr />
+    <table>
+        <tbody id="track">
+            <tr>
+                <td style="width:75%">David</td>
+                <td>
+                    <input type="button" id="btnwarn1" value="Warn" onclick="warn('1','david')" />
+                    <input type="button" id="btnstoprun1" value="Stop" onclick="stoprun('1','david')" />
+                    <span id="shuttleno1"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>James</td>
+                <td>
+                    <input type="button" id="btnwarn2" value="warn" onclick="warn(2,'james')" />
+                    <input type="button" id="btnstoprun2" value="stop" onclick="stoprun(2,'james')" />
+                    <span id="shuttleno2"></span>
+
+                </td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>
+                    <input type="button" id="btnwarn3" value="warn" onclick="warn(3,'john')" />
+                    <input type="button" id="btnstoprun3" value="stop" onclick="stoprun(3,'john')" />
+                    <span id="shuttleno3"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="js/run.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getItems();
+    </script>
+</body>
+</html>

@@ -1,7 +1,6 @@
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\Models\fitnessrating_beeptest.json
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\yoyo_web_app.exe
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\obj\Debug\netcoreapp3.1\yoyo_web_app.AssemblyInfoInputs.cache
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\obj\Debug\netcoreapp3.1\yoyo_web_app.AssemblyInfo.cs
@@ -18,7 +17,6 @@ C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Deb
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\obj\Debug\netcoreapp3.1\yoyo_web_app.dll
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\obj\Debug\netcoreapp3.1\yoyo_web_app.pdb
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\obj\Debug\netcoreapp3.1\yoyo_web_app.genruntimeconfig.cache
-C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\obj\Debug\netcoreapp3.1\yoyo_web_app.csprojAssemblyReference.cache
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
@@ -39,3 +37,11 @@ C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Deb
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\obj\Debug\netcoreapp3.1\yoyo_web_app.csproj.CoreCompileInputs.cache
 C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\obj\Debug\netcoreapp3.1\yoyo_web_app.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\obj\Debug\netcoreapp3.1\yoyo_web_app.csprojAssemblyReference.cache
+C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\yoyo.web.BL.dll
+C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\yoyo.web.BL.pdb
+C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\obj\Debug\netcoreapp3.1\yoyo_web_app.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\dhanoreG\source\repos\learn_multi_run_test\learn_multi_run_test\bin\Debug\netcoreapp3.1\Uploads\fitnessrating_beeptest.json

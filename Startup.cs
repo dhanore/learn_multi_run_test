@@ -1,20 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System.Text;
-using yoyo_web_app.Helpers;
-using yoyo_web_app.Models;
-using yoyo_web_app.Services;
-using Microsoft.EntityFrameworkCore;
-using yoyo_web_app.Repository;
+using yoyo.web.BL.Helpers;
+using yoyo.web.BL.Models;
+using yoyo.web.BL.Repository;
+using yoyo.web.BL.Services;
 //using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace yoyo_web_app
@@ -34,6 +27,8 @@ namespace yoyo_web_app
             services.AddDbContext<DBContext>(opt =>
                                                opt.UseInMemoryDatabase("Book"));
 
+            services.AddDbContext<DBContext>(opt =>
+                                               opt.UseInMemoryDatabase("AthletesResult"));
             services.AddCors();
             services.AddControllers();
 
@@ -67,6 +62,7 @@ namespace yoyo_web_app
             //});
 
             // configure DI for application services
+            services.AddScoped<DbContext, DBContext>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IFitnessService, FitnessService>();

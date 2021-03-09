@@ -1,6 +1,6 @@
 ﻿const uri = 'api/Fitness';
 let books = [];
-
+var status = 0;
 function getItems() {
 
     document.getElementById("curr_track").style.display = "none";
@@ -11,7 +11,7 @@ function getItems() {
     document.getElementById("btnwarn2").disabled = true;
     document.getElementById("btnstoprun3").disabled = true;
     document.getElementById("btnwarn3").disabled = true;
-
+    status = 0;
     fetch(uri)
         .then(response => response.json())
         .then(data => _displayItems(data))
@@ -26,8 +26,8 @@ function getAthletesResult(id) {
 }
 
 var loadsecond = 0;
-function getNextShuttle(id)
-{
+function getNextShuttle(id) {
+    status = 1;
     fetch(uri + "/" + id)
         .then(response => response.json())
         .then(data => _displayItems(data))
@@ -35,16 +35,18 @@ function getNextShuttle(id)
             move(loadsecond);
         })
         .catch(error => console.error('Unable to get items.', error));
-        
+
 }
 
 var startInterval;
-function startrun()
-{
+function startrun() {
+    status = 1;
+    document.getElementById('nextShuttle').innerText = document.getElementById('next_starttime').value + ' s';
+    document.getElementById('totalTime').innerText = document.getElementById('curr_commulativetime').value + ' s';
+    document.getElementById('totalDistance').innerText = document.getElementById('curr_accshuttledistance').value + ' m';
+
     document.getElementById("curr_track").style.display = "block";
-
     document.getElementById("btnstartrun").disabled = true;
-
     document.getElementById("btnstoprun1").disabled = false;
     document.getElementById("btnwarn1").disabled = false;
     document.getElementById("btnstoprun2").disabled = false;
@@ -53,7 +55,7 @@ function startrun()
     document.getElementById("btnwarn3").disabled = false;
     startInterval = setInterval(function () {
         var accshuttledist = document.getElementById('curr_accshuttledistance').value;
-       // setTimeout(() => { clearInterval(inter); }, millisecond);
+        // setTimeout(() => { clearInterval(inter); }, millisecond);
         getNextShuttle(accshuttledist)
     }, loadsecond);
 
@@ -63,10 +65,8 @@ function startrun()
 
 var i = 0;
 var moveInterval;
-function move(msec)
-{
-    if (i == 0)
-    {
+function move(msec) {
+    if (i == 0) {
         i = 1;
         var intervel = msec / 100;
         var elem = document.getElementById("myBar");
@@ -86,8 +86,7 @@ function move(msec)
 }
 
 var stop = 0;
-function stoprun(id, name)
-{
+function stoprun(id, name) {
     stop++;
     const accshuttledist = document.getElementById('curr_accshuttledistance').value;
     const item = {
@@ -121,42 +120,42 @@ function stoprun(id, name)
         .then(() => {
             document.getElementById("btnstoprun" + id).disabled = true;
             document.getElementById("btnwarn" + id).disabled = true;
+            document.getElementById("btnstoprun" + id).value = "Stoped";
         })
         .catch(error => console.error('Unable to add item.', error));
 
-   
+
 }
 
 function warn(id, name) {
 
-    const accshuttledist = document.getElementById('curr_accshuttledistance').value;
+    document.getElementById("btnwarn" + id).disabled = true;
+    document.getElementById("btnwarn" + id).value = "Warned";
 
-    const item = {
-        Id: parseInt(id, 10),
-        AthleteName: name,
-        AccumulatedShuttleDistance: parseInt(accshuttledist, 10),
-        IsWarned: true
-    };
 
-    fetch(uri, {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(item)
-    })
-        // .then(response => response.json())
-        .then(() => {
-            document.getElementById("btnwarn" + id).disabled = true;
-        })
-        .catch(error => console.error('Unable to add item.', error));
-}
+    //const accshuttledist = document.getElementById('curr_accshuttledistance').value;
 
-function _displayCount(itemCount) {
-   // const name = (itemCount === 1) ? 'to-do' : 'to-dos';
+    //const item = {
+    //    Id: parseInt(id, 10),
+    //    AthleteName: name,
+    //    AccumulatedShuttleDistance: parseInt(accshuttledist, 10),
+    //    IsWarned: true
+    //};
 
-   // document.getElementById('counter').innerText = `${itemCount} ${name}`;
+    //fetch(uri, {
+    //    method: 'POST',
+    //    headers: {
+    //        'Accept': 'application/json',
+    //        'Content-Type': 'application/json'
+    //    },
+    //    body: JSON.stringify(item)
+    //})
+    //    .then(() => {
+    //        document.getElementById("btnwarn" + id).disabled = true;
+    //        document.getElementById("btnwarn" + id).value = "Warned";
+
+    //    })
+    //    .catch(error => console.error('Unable to add item.', error));
 }
 
 
@@ -166,7 +165,6 @@ function _displayShuttleNo(id, data) {
 
 function _displayItems(data) {
 
-    //_displayCount(data.length);
 
     var indx = 0;
     data.forEach(item => {
@@ -182,10 +180,15 @@ function _displayItems(data) {
 
             document.getElementById('level').innerText = item.speedLevel;
             document.getElementById('shuttle').innerText = item.shuttleNo;
-            document.getElementById('kmperhr').innerText = item.speed+' km/h';
+            document.getElementById('kmperhr').innerText = item.speed + ' km/h';
 
-            document.getElementById('totalTime').innerText = `${item.commulativeTime} s`;
-            document.getElementById('totalDistance').innerText = `${item.accumulatedShuttleDistance} s`;
+            if (status == 1) {
+                document.getElementById('totalTime').innerText = `${item.commulativeTime} m`;
+                document.getElementById('totalDistance').innerText = `${item.accumulatedShuttleDistance} m`;
+            } else {
+                document.getElementById('totalTime').innerText = `0:00 m`;
+                document.getElementById('totalDistance').innerText = `0 m`;
+            }
         }
 
         if (indx == 1) {
@@ -197,11 +200,13 @@ function _displayItems(data) {
             document.getElementById('next_commulativetime').value = item.commulativeTime
             document.getElementById('next_starttime').value = item.startTime
 
-            document.getElementById('nextShuttle').innerText = `${item.startTime} s`;
+            if (status == 1) {
+                document.getElementById('nextShuttle').innerText = `${item.startTime} s`;
+            } else {
+                document.getElementById('nextShuttle').innerText = `0:00 s`;
+            }
         }
 
-        
-       
         indx = indx + 1;
     });
 
@@ -217,6 +222,4 @@ function _displayItems(data) {
 
     loadsecond = millisecond - millisecond2;
     document.getElementById('loadsecond').value = loadsecond;
-
-
 }

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using yoyo_web_app.Filters;
-using yoyo_web_app.Models;
-using yoyo_web_app.Services;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using yoyo.web.BL.Filters;
+using yoyo.web.BL.Models;
+using yoyo.web.BL.Services;
 
 namespace yoyo_web_app.Controllers
 {
@@ -22,7 +17,7 @@ namespace yoyo_web_app.Controllers
         }
 
         [HttpPost("authenticate")]
-        public IActionResult Authenticate(AuthenticateRequest model) //IHttpResponse
+        public IActionResult Authenticate(AuthenticateRequest model)
         {
             var response = _userService.Authenticate(model);
 

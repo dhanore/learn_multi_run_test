@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using yoyo_web_app.Filters;
-using yoyo_web_app.Models;
+using yoyo.web.BL.Filters;
+using yoyo.web.BL.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +13,7 @@ namespace yoyo_web_app.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class BookController : ControllerBase
     {
         private readonly DBContext _context;

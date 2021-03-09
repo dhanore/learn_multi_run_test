@@ -2,27 +2,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Book CRUD</title>
+    <title>YoYo Test</title>
     <link rel="stylesheet" href="css/run.css" />
 </head>
 <body>
-    <h1>Book CRUD</h1>
-    <h3>Add</h3>
-    <!--<form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-        <input type="text" id="add-name" placeholder="New to-do">
-        <input type="submit" value="Add">
-    </form>
-
-    <div id="editForm">
-        <h3>Edit</h3>
-        <form action="javascript:void(0);" onsubmit="updateItem()">
-            <input type="hidden" id="edit-id">
-            <input type="checkbox" id="edit-inStock">
-            <input type="text" id="edit-name">
-            <input type="submit" value="Save">
-            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
-        </form>
-    </div>-->
+    <h1>YoYo Test</h1>
     <input type="hidden" id="curr_accshuttledistance" />
     <input type="hidden" id="curr_speedlevel" />
     <input type="hidden" id="curr_shuttlenumber" />
@@ -43,7 +27,7 @@
 
 
     <div>
-        <div><input type="button" id="btnstartrun" onclick="startrun()" value="Start" /></div>
+        <div><input type="button" id="btnstartrun" onclick="startrun()" value="Play" style="font-size:x-large;" /></div>
         <div id="curr_track" style="margin-top:5px; padding:10px;border-radius:10px;background-color:#e0e0e0">
             <div><span>Level</span> <span id="level"></span></div>
             <div><span>Shuttle</span> <span id="shuttle"></span></div>
@@ -77,8 +61,8 @@
             <tr>
                 <td>James</td>
                 <td>
-                    <input type="button" id="btnwarn2" value="warn" onclick="warn(2,'james')" />
-                    <input type="button" id="btnstoprun2" value="stop" onclick="stoprun(2,'james')" />
+                    <input type="button" id="btnwarn2" value="Warn" onclick="warn(2,'james')" />
+                    <input type="button" id="btnstoprun2" value="Stop" onclick="stoprun(2,'james')" />
                     <span id="shuttleno2"></span>
 
                 </td>
@@ -86,8 +70,8 @@
             <tr>
                 <td>John</td>
                 <td>
-                    <input type="button" id="btnwarn3" value="warn" onclick="warn(3,'john')" />
-                    <input type="button" id="btnstoprun3" value="stop" onclick="stoprun(3,'john')" />
+                    <input type="button" id="btnwarn3" value="Warn" onclick="warn(3,'john')" />
+                    <input type="button" id="btnstoprun3" value="Stop" onclick="stoprun(3,'john')" />
                     <span id="shuttleno3"></span>
                 </td>
             </tr>

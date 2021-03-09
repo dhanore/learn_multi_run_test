@@ -10,5 +10,9 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.8.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\yoyo.web.BL\yoyo.web.BL.csproj" />
+  </ItemGroup>
+
 
 </Project>

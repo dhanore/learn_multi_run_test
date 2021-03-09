@@ -1,15 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
-using yoyo_web_app.Models;
-using yoyo_web_app.Services;
+using yoyo.web.BL.Models;
+using yoyo.web.BL.Services;
 
-namespace learn_multi_run_test.Controllers
+namespace yoyo_web_app.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
@@ -22,6 +17,10 @@ namespace learn_multi_run_test.Controllers
             _fitnessService = fitnessService;
         }
 
+        /// <summary>
+        /// Get Top 2 Shuttle Information
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public List<FitnessRatingShuttle> GetAllShuttle()
         {
@@ -29,6 +28,11 @@ namespace learn_multi_run_test.Controllers
             return item;
         }
 
+        /// <summary>
+        /// Get Next two Shuttle Information
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public List<FitnessRatingShuttle> GetAllShuttle(int id)
         {
@@ -36,13 +40,12 @@ namespace learn_multi_run_test.Controllers
             return item;
         }
 
-        [HttpGet("{id}/result")]
-        public AthletesResult GetAthletesResult(int id)
-        {
-            var item = _fitnessService.GetAthletesResult(id);
-            return item;
-        }
 
+        /// <summary>
+        /// Save Atheletes Shuttle Information
+        /// </summary>
+        /// <param name="athletes"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<AthletesResult>> Post(AthletesDto athletes)
         {
@@ -59,6 +62,18 @@ namespace learn_multi_run_test.Controllers
             }
 
             return NoContent();
+        }
+
+        /// <summary>
+        /// Get Atheletes Shuttle Information
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("{id}/result")]
+        public AthletesResult GetAthletesResult(int id)
+        {
+            var item = _fitnessService.GetAthletesResult(id);
+            return item;
         }
     }
 }
